@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body,html{
+    height: 100%;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    background-image: url("background.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+h2{
+    font-family: 'Arial', sans-serif;
+    font-size: 60px;
+    font-weight: bold;
+    color: darkred;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 20px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+.container {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    position: relative;
+    color: black;
+}
+
+.container .label {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: darkred;
+    font-size: 30px;
+    padding-left: 10px;
+    position: absolute;
+    top: 10px;
+    transition: 0.3s;
+    pointer-events: none;
+}
+.input {
+    width: 1000px;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding: 0px 7px;
+    border-radius: 6px;
+    color: black;
+    font-size: 15px;
+    background-color: gray;
+    box-shadow: 3px 3px 10px rgba(0,0,0,1),
+    -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+
+.input:focus {
+    border: 2px solid transparent;
+    color: black;
+    background-color: lightgray;
+    font-size: 30px;
+    box-shadow: 3px 3px 10px rgba(0,0,0,1),
+    -1px -1px 6px rgba(255, 255, 255, 0.4),
+    inset 3px 3px 10px rgba(0,0,0,1),
+    inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+
+.input:not(:placeholder-shown) {
+    background-color: gray;
+}
+.input:focus:not(:placeholder-shown) {
+    background-color: lightgray;
+}
+
+.container .input:valid ~ .label,
+.container .input:focus ~ .label {
+    transition: 0.3s;
+    padding-right: 480px;
+    transform: translateY(-50px);
+}
+
+.container .input:valid,
+.container .input:focus {
+    font-size: 30px;
+    box-shadow: 3px 3px 10px rgba(0,0,0,1),
+    -1px -1px 6px rgba(255, 255, 255, 0.4),
+    inset 3px 3px 10px rgba(0,0,0,1),
+    inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+
+#search-results {
+    font-weight: bold;
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    margin-left: -37.5px;
+}
+
+#search-results li {
+    background-color: #ccc;
+    margin: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 990px;
+    border-radius: 5px;
+}
+
+#search-results li:hover {
+    background-color: #aaa;
+}
+
+#lyrics {
+    background-color: rgba(128, 128, 128, 0.75);
+    width: 50%;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 10px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+    position: relative;
+}
+#lyrics.visible {
+    display: block;
+}
+
+/* copy button */
+
+#copy-button {
+    background-color: black;
+    color: white;
+    padding: 12px 20px;
+    font-size: 40px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    position: absolute;
+    right: 100px;
+    top: 1150px;
+    transition: background-color 0.3s ease;
+}
+
+#copy-button:hover {
+    background-color: rgba(255, 255, 0, 0.75);
+}
+
+#copy-button:active {
+    transform: scale(0.95);
+}
