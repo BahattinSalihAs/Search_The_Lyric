@@ -36,7 +36,7 @@ Search Lyrics is a web application that allows users to search for song lyrics b
 - **JavaScript**: For fetching data from the API and dynamically updating the page.
 - **Lyrics.ovh API**: Used to fetch song suggestions and lyrics.
 
-## Setup
+## Setup and Running the Project
 
 ### 1. Clone the Repository:
 
@@ -44,3 +44,37 @@ To get started with the project, first clone the repository to your local machin
 
 ```bash
 git clone https://github.com/BahattinSalihAs/search-lyrics.git
+```
+### 2.Install Docker
+- If you don't have Docker installed, download it from Docker's official website and follow the installation instructions.
+
+### 3.Build the Docker Image
+```bash
+docker build -t search-the-lyric .
+```
+
+### 4.Run the Docker Container
+```bash
+docker run -d -p 8080:8080 --name search-the-lyric-container search-the-lyric
+```
+
+### 5.Go to the Website Url: http://localhost:8080
+- Once the Docker container is running, you can access the application via http://localhost:8080 in your web browser.
+
+### 6.Stopping the Docker Container
+```bash
+docker stop search-the-lyric-container
+```
+
+### 7.Remove the Docker Container
+```bash
+docker rm search-the-lyric-container
+```
+
+
+
+
+
+
+
+
